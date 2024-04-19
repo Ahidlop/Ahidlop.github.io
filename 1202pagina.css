@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+   
+}
+html,body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #d9dfdb,#7cd1f0, #035992, #026a83, #409f99, #d9dfdb) ; 
+    
+    padding-top: 100vh;
+}
+
+
+/*CABECERA*/
+header{
+
+    text-align: center;
+    background-repeat: no-repeat;
+    color: rgba(165, 83, 83,0.5);/*El último punto añadido 0.5 es opacidad*/
+    font-size: 35px;
+    width: 100%;
+    height: 30vh; /* Altura del vídeo */
+    overflow: hidden;
+
+    position: fixed;
+        top: 0;
+    
+        animation: sticky-parallax-header-move-and-size linear forwards;
+        animation-timeline: scroll();
+        animation-range: 0vh 90vh;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cubre el área del contenedor manteniendo la relación de aspecto */
+    }
+
+    @keyframes sticky-parallax-header-move-and-size {
+        from {
+            background-position: 50% 0;
+            height: 100vh;
+            font-size: calc(4vw + 1em);
+        }
+        to {
+            background-position: 50% 100%;
+            background-color: #0b1584;
+            height: 20vh;
+            font-size: 2em;
+        }
+    }
+    
+    
+
+
+
+/*BARRA NAVEGACIÓN*/
+nav ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+   
+}
+
+
+nav ul a {
+    flex: auto;
+    padding: 15px;
+    background-color: #035992;
+    font-size: 20px;
+    border: 3px solid #d9dfdb;
+    text-align: center;
+    text-decoration: none;
+    color: #d9dfdb;
+    border-radius: 20px;
+    font-size: 20px;
+    font: bold;
+    
+}
+
+
+@media screen and(max-width: 700px){
+    nav, .row{
+        flex-direction: column;
+
+
+    }
+}
+
+
+nav ul a:hover {
+    background-color: #d9dfdb;
+    color: #035992;
+    box-shadow: inset 0 0 0 2px #035992;
+    border-radius: 20px;
+    border-color: #035992;
+    animation: mymove 2s;
+}
+
+
+@keyframes mymove {
+  50% {transform: rotate(180deg);}
+
+
+}
+
+
+
+
+/*INTRODUCCIÓN*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(to right,#035992, #026a83, #409f99,#7cd1f0,  #d9dfdb) ;
+
+}
+#Asuperior{
+    flex: 30%;
+    
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}
+#Ssuperior{
+    flex: 60%;
+    
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+/*FOTOS TEXTO*/
+
+.contenedorizq{
+    display: flex;
+    align-items: center;
+}
+
+.contenedorizq img{
+    max-width: 50%;
+    border-radius: 25%;
+    border-color: aliceblue;
+    border-width: 50%;
+        /* Create View Timeline */
+        view-timeline-name: --revealing-image;
+        view-timeline-axis: block;
+    
+    
+        /* Attach animation, linked to the  View Timeline */
+        animation: linear reveal both;
+        animation-timeline: --revealing-image;
+    
+    
+        /* Tweak range when effect should run*/
+        animation-range: entry 45% cover 50%;
+        animation-duration: 3s;
+    
+    
+        border-image: stretch;
+}
+
+.contenedorizq .p{
+    flex-grow: 1;
+    margin-left: 20px;
+    text-align: center;
+}
+
+
+.contenedordcha{
+    display: flex;
+    align-items: center;
+}
+
+.contenedordcha img{
+    max-width: 50%;
+    margin-left: 20px;
+    border-radius: 25%;
+        /* Create View Timeline */
+        view-timeline-name: --revealing-image;
+        view-timeline-axis: block;
+    
+    
+        /* Attach animation, linked to the  View Timeline */
+        animation: linear reveal both;
+        animation-timeline: --revealing-image;
+    
+    
+        /* Tweak range when effect should run*/
+        animation-range: entry 45% cover 50%;
+    
+    
+        border-image: stretch;
+}
+
+.contenedordcha .p{
+    flex-grow: 1;
+    text-align: center;
+
+}
+
+
+
+#tamaño{
+    width: 30%;
+    height: 30%;
+    border-radius: 10%;
+}
+
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(45% 20% 45% 20%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+.fotoizq {
+
+}
+
+
+.fotodcha {
+    /* Create View Timeline */
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+
+
+    /* Attach animation, linked to the  View Timeline */
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+
+
+    /* Tweak range when effect should run*/
+    animation-range: entry 25% cover 50%;
+
+
+    border-image: stretch;
+}
+
+
+
+
+/*PIE DE PÁGINA*/
+footer{
+    padding: 20px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 30px;
+    height: 5%;
+    width: 100%;
+    
+    
+
+}
+
+
+
+
+
+
